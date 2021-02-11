@@ -76,11 +76,17 @@ try (Spanner spanner = Tracing.of(options.getService())) {
 }
 ```
 
-The PurePaths created by this sample then look like this.
+This is a PurePath produced by the above sample.
 
 ![PurePath](./doc/img/spanner-purepath.png)
 
+The "Request to unmonitored hosts" represents what OneAgent is able to recognize out of the box, simply because GRPC communication is getting intercepted.
+The bit of information contributed by this solution is the Database Node (including the actual SQL statement).
+You can also expect to see an actual Database Service to emerge within the Dynatrace WebUI. This means any calls from other applications instrumented in the same way will contribute to the Throughput and Failure Rate of this Database Service - just like you would expect it to see for any other database that is getting accessed via JDBC.
+
+![Database Service](./doc/img/spanner-db-service.png)
+
+
 ## Extending the solution
 As already mentioned, this solution is by no means feature complete. Currently only plain queries and updates are getting instrumented.
-You may want to take a look at the implementation of [ReadContextImpl.java](./src/main/java/dynatrace/com/google/cloud/spanner/ReadContextImpl.java) in order to e.g. extend the capabilities in other places. For almost all use cases decorator classes already exist.
-You may wa
+You may want to take a look at the implementation of [ReadContextImpl.java](./src/main/java/dynatrace/com/google/cloud/spanner/ReadContextImpl.java) in order to e.g. extend the capabilities in other places. For almost all use cases decorator classes already exist. A possible next step would e.g. be to also monitor administrative queries.
