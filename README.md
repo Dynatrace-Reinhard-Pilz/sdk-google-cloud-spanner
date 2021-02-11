@@ -77,5 +77,5 @@ try (Spanner spanner = Tracing.of(options.getService())) {
 ```
 ## Extending the solution
 As already mentioned, this solution is by no means feature complete. Currently only plain queries and updates are getting instrumented.
-You may want to take a look at the implementation of [ReadContextImpl.java[(./blob/main/src/main/java/dynatrace/com/google/cloud/spanner/ReadContextImpl.java) in order to e.g. extend the capabilities in other places. For almost all use cases decorator classes already exist.
+You may want to take a look at the implementation of [ReadContextImpl.java](./blob/main/src/main/java/dynatrace/com/google/cloud/spanner/ReadContextImpl.java) in order to e.g. extend the capabilities in other places. For almost all use cases decorator classes already exist.
 You may wa
