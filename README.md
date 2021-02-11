@@ -12,7 +12,7 @@ The current implementation focuses the execution of plain queries and updates. B
 ## Usage
 This solution will until further notice not be available as prebuilt binaries on public repositories. Therefore it is required to build the solution manually and add the resulting JAR file to a local repository.
 
-Integrating into the build process via Mavan `pom.xml` is pretty straightforward.
+Integrating into the build process via Maven `pom.xml` is pretty straightforward.
 
 ```xml
 <dependency>
