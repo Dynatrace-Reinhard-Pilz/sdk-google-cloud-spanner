@@ -1,4 +1,4 @@
-# sdk-google-cloud-spanner
+# Google Cloud Spanner & OneAgentSDK
 
 This project provides the necessary groundwork for integrating the [Dynatrace OneAgent SDK[(https://www.dynatrace.com/support/help/extend-dynatrace/oneagent-sdk/) into applications using [Google Cloud Spanner](https://cloud.google.com/spanner) as their database backend.
 
@@ -21,6 +21,16 @@ Integrating into the build process via Maven `pom.xml` is pretty straightforward
   <version>3.3.2</version>
 </dependency>
 ```
+Introducing this dependency into your build process will indirectly introduce the dependency to the [OneAgent SDK for Java](https://github.com/Dynatrace/OneAgent-SDK-for-Java).
+```xml
+<dependency>
+    <groupId>com.dynatrace.oneagent.sdk.java</groupId>
+    <artifactId>oneagent-sdk</artifactId>
+    <version>1.8.0</version>
+</dependency>
+```
+This library is available via public maven repositories and is regularly getting maintained and updated by Dynatrace R&D.
+
 ### Enabling the tracing capabilities
 In order to enable the tracing capabilities, let's take a look at a small example.
 
