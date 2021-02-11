@@ -1,8 +1,8 @@
 # Google Cloud Spanner & OneAgentSDK
 
-This project provides the necessary groundwork for integrating the [Dynatrace OneAgent SDK[(https://www.dynatrace.com/support/help/extend-dynatrace/oneagent-sdk/) into applications using [Google Cloud Spanner](https://cloud.google.com/spanner) as their database backend.
+This project provides the necessary groundwork for integrating the [Dynatrace OneAgent SDK](https://www.dynatrace.com/support/help/extend-dynatrace/oneagent-sdk/) into applications using [Google Cloud Spanner](https://cloud.google.com/spanner) as their database backend.
 
-The current version of the Cloud Spanner Client Libraries for Java provided by Google already ARE preinstrumented with tracing capabilities. Unfortunately they are using [OpenCensus[(https://opencensus.io) - which has officially gotten merged with [OpenTracing](https://opentracing.io) to the [OpenTelemetry Standard](https://opentelemetry.io). Dynatrace OneAgent supports out of the box OpenTelemetry (and to a certain extent also OpenTracing), but support for OpenCensus is unlikely to happen.
+The current version of the Cloud Spanner Client Libraries for Java provided by Google already ARE preinstrumented with tracing capabilities. Unfortunately they are using [OpenCensus](https://opencensus.io) - which has officially gotten merged with [OpenTracing](https://opentracing.io) to the [OpenTelemetry Standard](https://opentelemetry.io). Dynatrace OneAgent supports out of the box OpenTelemetry (and to a certain extent also OpenTracing), but support for OpenCensus is unlikely to happen.
 
 It is expected that the Cloud Spanner Libraries for Java will eventually be utilizing OpenTelemetry, but until then applications monitored by OneAgent by default won't be able to recognize requests to Cloud Spanner as Database Queries.
 This project therefore represents an intermediate solution - essentially leveraging the OneAgent SDK for Java.
